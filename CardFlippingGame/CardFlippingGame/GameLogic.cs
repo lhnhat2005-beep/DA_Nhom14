@@ -54,11 +54,11 @@ namespace CardFlippingGame
                 for (int j = 0; j < socot; j++)
                 {
                     Card c = gameManage.The[i, j];
-                    if (ui.Theme == "ThemePokemon")
+                    if (ui.Theme == "Pokemon.png")
                     {
                         c.BackPicture = @"D:\CardFlippingGame\Picture\PicturePokemon\BackPicturePokemon.png";
                     }
-                    else if(ui.Theme=="ThemeTarot")
+                    else if(ui.Theme=="Tarot.png")
                         c.BackPicture = @"D:\CardFlippingGame\Picture\PictureTarot\BackPictureTarot.png";
                     PictureBox pb = new PictureBox()
                     {

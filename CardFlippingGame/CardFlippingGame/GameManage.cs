@@ -25,7 +25,11 @@ namespace CardFlippingGame
         {
             @"D:\CardFlippingGame\Picture\Theme\ThemePokemon.png",
             @"D:\CardFlippingGame\Picture\Theme\ThemeTarot.png",
-        }; //list chứa ảnh nền của theme
+        }; //list chứa ảnh của các nút chọn theme
+        public List<string> BackGround = new List<string> {
+            @"D:\CardFlippingGame\Picture\PicturePokemon\BackGroundPokemon.png",
+            @"D:\CardFlippingGame\Picture\PictureTarot\BackGroundTarot.png"
+        }; //list chứa ảnh background của các theme
         List<string> PictureListTarot = new List<string> 
         {
             @"D:\CardFlippingGame\Picture\PictureTarot\Tarot1.png",
@@ -53,7 +57,7 @@ namespace CardFlippingGame
         public Card[,] The;
         public void x2(string m,GameUI UI)//x2 Từng Phần Tử Trong PictureList
         {
-            if (m == "ThemeTarot") {
+            if (m == "Tarot.png") {
                 FisherYates(PictureListTarot);
                 for(int i=0;i<UI.SoCotBang*UI.SoDongBang/2;i++)
                 {
@@ -61,7 +65,7 @@ namespace CardFlippingGame
                     Listx2.Add(PictureListTarot[i]);
                 }
             }
-            else if(m == "ThemePokemon") {
+            else if(m == "Pokemon.png") {
                 FisherYates(PictureListPokemon);
                 for (int i = 0; i < UI.SoCotBang * UI.SoDongBang / 2; i++)
                 {

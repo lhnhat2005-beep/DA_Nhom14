@@ -35,20 +35,15 @@ namespace CardFlippingGame
         public void BackGroundImage(Form f, string m)//Quản lý Background 
         {
             this.f = f;
-            if (m == "ThemePokemon")
-            {
-                f.BackgroundImage = Image.FromFile(@"D:\CardFlippingGame\Picture\PicturePokemon\BackGroundPokemon.png");
-            }
-            else
-                if (m == "ThemeTarot")
-            {
-                f.BackgroundImage = Image.FromFile(@"D:\CardFlippingGame\Picture\PictureTarot\BackGroundTarot.png");
-            }
-            else
-            {
-                f.BackgroundImage = Image.FromFile(@"D:\CardFlippingGame\Picture\Theme\StartBackGroundImage.png");
-            }
             f.BackgroundImageLayout = ImageLayout.Stretch;
+            foreach (string c in gameManage.BackGround) {
+                if (c.EndsWith(m))
+                {
+                    f.BackgroundImage = Image.FromFile(c);
+                    return;
+                } 
+            }
+            f.BackgroundImage = Image.FromFile(@"D:\CardFlippingGame\Picture\Theme\StartBackGroundImage.png");
         }
         public void f_resize(object sender, EventArgs e) //điều chỉnh vị trí và chiều cao, chiều rộng nếu form thay đổi hình dạng
         {
@@ -205,11 +200,11 @@ namespace CardFlippingGame
                     };
                     if (c.EndsWith("ThemePokemon.png"))
                     {
-                        pb.Name = "ThemePokemon";
+                        pb.Name = "Pokemon.png";
                     }
                     else if (c.EndsWith("ThemeTarot.png"))
                     {
-                        pb.Name = "ThemeTarot";
+                        pb.Name = "Tarot.png";
                     }
                     i++;
                     f.Controls.Add(pb);
@@ -246,14 +241,13 @@ namespace CardFlippingGame
                 cho.Dispose();
                 Theme = " ";
                 PictureBox pb = sender as PictureBox;
-                string name = pb.Name;
                 foreach (Control p in f.Controls) //ẩn các nút chọn theme
                 {
                     if (p is PictureBox && p.Tag is string tag && tag == "Theme")
                         p.Visible = false;
                 }
                 start();
-                Theme = name;
+                Theme = pb.Name;
                 BackGroundImage(f, Theme);
                 back();
                 if (De.BorderStyle != BorderStyle.Fixed3D)
@@ -299,6 +293,8 @@ namespace CardFlippingGame
         {
             if (f.Controls.Contains(Back))
             {
+                Back.Width = f.ClientRectangle.Width / 11;
+                Back.Height = f.ClientRectangle.Height / 12;
                 Back.Visible = true;
             }
             else
@@ -650,7 +646,7 @@ namespace CardFlippingGame
             else
             {
                 Restart.Name = "pb_restart";
-                Restart.Image = Image.FromFile(@"D:\on tap\CardFlippingGame\Picture\UIcontrols\Restart.png");
+                Restart.Image = Image.FromFile(@"D:\CardFlippingGame\Picture\UIcontrols\Restart.png");
                 Restart.SizeMode = PictureBoxSizeMode.StretchImage;
                 Restart.Height = f.ClientRectangle.Height / 8;
                 Restart.Width = f.ClientRectangle.Width/ 9;
