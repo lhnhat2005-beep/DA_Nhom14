@@ -28,17 +28,17 @@ namespace CardFlippingGame
         public bool DangCho = false;// điều kiện ngăn không cho người chơi click liên tục 
         public void TaoManChoi(Form f, GameUI UI) //tạo màn chơi
         {
-            if (CardList.Count > 0) 
+            if (CardList.Count > 0)
             {
-               CardList.Clear(); //CardList về lại rỗng, xóa các Card cũ trong CardList đã bị f.remove và dispose khi nhấn nút restart hay back nhưng vẫn được CardList nhớ  
+                CardList.Clear(); //CardList về lại rỗng, xóa các Card cũ trong CardList đã bị f.remove và dispose khi nhấn nút restart hay back nhưng vẫn được CardList nhớ  
             }
             gameManage = new GameManage();
             this.f = f;
             this.ui = UI;
-            int cardheight = f.ClientRectangle.Height/5;
+            int cardheight = f.ClientRectangle.Height / 5;
             int cardwidth = f.ClientRectangle.Height / 5;
             int Khoangcach = 10;
-             int sodong = ui.SoDongBang;
+            int sodong = ui.SoDongBang;
             int socot = ui.SoCotBang;
             int broadheight;
             int broadwidth;
@@ -46,7 +46,7 @@ namespace CardFlippingGame
             broadwidth = socot * cardwidth + (socot - 1) * Khoangcach;//tính chiều rộng của bảng trò chơi
             int y = (f.ClientSize.Width - broadwidth) / 2;// x và y là tọa độ của vị trí bắt đầu tạo bảng trò chơi
             int x = (f.ClientSize.Height - broadheight) / 2;
-            gameManage.KhoiTaoBang(ui.Theme,ui);
+            gameManage.KhoiTaoBang(ui.Theme, ui);
             solanclick(ui);
             SoLanSai = 0;
             for (int i = 0; i < sodong; i++)
@@ -54,28 +54,27 @@ namespace CardFlippingGame
                 for (int j = 0; j < socot; j++)
                 {
                     Card c = gameManage.The[i, j];
-                    if (ui.Theme == "Pokemon.png")
+                    foreach(string s in gameManage.BackPicture)
                     {
-                        c.BackPicture = @"D:\CardFlippingGame\Picture\PicturePokemon\BackPicturePokemon.png";
+                        if (s.EndsWith(ui.Theme))
+                            c.BackPicture = s;
                     }
-                    else if(ui.Theme=="Tarot.png")
-                        c.BackPicture = @"D:\CardFlippingGame\Picture\PictureTarot\BackPictureTarot.png";
-                    PictureBox pb = new PictureBox()
-                    {
-                        Width = cardwidth,
-                        Height = cardheight,
-                        Top = (x + i * (cardheight + Khoangcach)),
-                        Left = (y + j * (cardwidth + Khoangcach)),
-                        SizeMode = PictureBoxSizeMode.StretchImage,
-                        Image = Image.FromFile(c.BackPicture),
-                        Tag = c,
-                    };
-                    f.Controls.Add(pb);
-                    CardList.Add(pb);
-                    pb.Click += pb_click;
+                        PictureBox pb = new PictureBox()
+                        {
+                            Width = cardwidth,
+                            Height = cardheight,
+                            Top = (x + i * (cardheight + Khoangcach)),
+                            Left = (y + j * (cardwidth + Khoangcach)),
+                            SizeMode = PictureBoxSizeMode.StretchImage,
+                            Image = Image.FromFile(c.BackPicture),
+                            Tag = c,
+                        };
+                        f.Controls.Add(pb);
+                        CardList.Add(pb);
+                        pb.Click += pb_click;
+                    }
                 }
-            }
-        }
+            } 
         public void pb_click(object sender, EventArgs e)// sự kiện click của thẻ
         {
             if (DangCho)

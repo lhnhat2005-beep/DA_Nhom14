@@ -23,7 +23,7 @@ namespace CardFlippingGame
         private PictureBox BonXBon = new PictureBox();
         private PictureBox Thua=new PictureBox();
         private GameLogic gameLogic = new GameLogic();
-        public GameManage gameManage = new GameManage();
+        public GameManage gameManage;
         Panel pn=new Panel();
         public int SoDongBang;
         public int SoCotBang;
@@ -31,19 +31,22 @@ namespace CardFlippingGame
         public string Theme;
         List<PictureBox> ThemeList = new List<PictureBox>();
        
-
-        public void BackGroundImage(Form f, string m)//Quản lý Background 
+        public GameUI(GameManage gameManage)
+        {
+            this.gameManage = gameManage;
+        }
+        public void BackGroundImage(Form f, string theme)//Quản lý Background 
         {
             this.f = f;
             f.BackgroundImageLayout = ImageLayout.Stretch;
             foreach (string c in gameManage.BackGround) {
-                if (c.EndsWith(m))
+                if (c.EndsWith(theme))
                 {
                     f.BackgroundImage = Image.FromFile(c);
                     return;
                 } 
             }
-            f.BackgroundImage = Image.FromFile(@"D:\CardFlippingGame\Picture\Theme\StartBackGroundImage.png");
+            f.BackgroundImage = Image.FromFile(gameManage.BackGround[0]);
         }
         public void f_resize(object sender, EventArgs e) //điều chỉnh vị trí và chiều cao, chiều rộng nếu form thay đổi hình dạng
         {
@@ -299,7 +302,14 @@ namespace CardFlippingGame
             }
             else
             {
-                Back.Image = Image.FromFile(@"D:\CardFlippingGame\Picture\UIcontrols\Back.png");
+                Back.Name = "Back.png";
+                foreach (string s in gameManage.SRB)
+                {
+                    if (s.EndsWith(Back.Name))
+                    {
+                        Back.Image = Image.FromFile(s);
+                    }
+                }
                 Back.Width = f.ClientRectangle.Width / 11;
                 Back.Height = f.ClientRectangle.Height / 12;
                 Back.Top = 0;
@@ -334,7 +344,7 @@ namespace CardFlippingGame
                     c.Dispose();
                 }
 
-                f.BackgroundImage = Image.FromFile(@"D:\CardFlippingGame\Picture\Theme\StartBackGroundImage.png");
+                f.BackgroundImage = Image.FromFile(gameManage.BackGround[0]);
                 f.BackgroundImageLayout = ImageLayout.Stretch;
 
                 ThemeSelectionButton(f);
@@ -373,8 +383,13 @@ namespace CardFlippingGame
             }
             else
             {
-                Start.Name = "pb_start";
-                Start.Image = Image.FromFile(@"D:\CardFlippingGame\Picture\UIcontrols\Start.png");
+                Start.Name = "Start.png";
+                foreach (string s in gameManage.SRB)
+                {
+                    if (s.EndsWith(Start.Name)){
+                        Start.Image = Image.FromFile(s);
+                    }
+                }
                 Start.SizeMode = PictureBoxSizeMode.StretchImage;
                 Start.Height = f.ClientRectangle.Height / 8;
                 Start.Width = f.ClientRectangle.Width/9;
@@ -645,8 +660,14 @@ namespace CardFlippingGame
             }
             else
             {
-                Restart.Name = "pb_restart";
-                Restart.Image = Image.FromFile(@"D:\CardFlippingGame\Picture\UIcontrols\Restart.png");
+                Restart.Name = "Restart.png";
+                foreach (string s in gameManage.SRB)
+                {
+                    if (s.EndsWith(Restart.Name))
+                    {
+                        Restart.Image = Image.FromFile(s);
+                    }
+                }
                 Restart.SizeMode = PictureBoxSizeMode.StretchImage;
                 Restart.Height = f.ClientRectangle.Height / 8;
                 Restart.Width = f.ClientRectangle.Width/ 9;
@@ -694,8 +715,14 @@ namespace CardFlippingGame
                     Thua.Left = y;
                     Thua.Visible = true;
                 }
-                else { 
-                    Thua.Image = Image.FromFile(@"D:\CardFlippingGame\Picture\PictureSo\Thua.png");
+                else {
+                    Thua.Name = "Thua.png";
+                    foreach (string s in gameManage.ThangThua)
+                    {
+                        if (s.EndsWith(Thua.Name)){
+                            Thua.Image = Image.FromFile(s); 
+                        }
+                    }
                     Thua.SizeMode= PictureBoxSizeMode.StretchImage;
                     Thua.Height = height;
                     Thua.Width = width;

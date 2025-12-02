@@ -17,7 +17,9 @@ namespace CardFlippingGame
         {
             InitializeComponent();
             this.BackColor = Color.Black;
-            GameUI UI = new GameUI();
+            GameManage gameManage=new GameManage();
+            gameManage.Chinh();
+            GameUI UI = new GameUI(gameManage);
             this.Resize += UI.f_resize;
             UI.BackGroundImage(this,"Default");
             UI.ThemeSelectionButton(this);
