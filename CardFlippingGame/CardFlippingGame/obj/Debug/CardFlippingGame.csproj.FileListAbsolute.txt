@@ -1,0 +1,22 @@
+D:\on tap\CardFlippingGame\CardFlippingGame\bin\Debug\CardFlippingGame.exe.config
+D:\on tap\CardFlippingGame\CardFlippingGame\bin\Debug\CardFlippingGame.exe
+D:\on tap\CardFlippingGame\CardFlippingGame\bin\Debug\CardFlippingGame.pdb
+D:\on tap\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.csproj.AssemblyReference.cache
+D:\on tap\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.Properties.Resources.resources
+D:\on tap\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.csproj.GenerateResource.cache
+D:\on tap\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.csproj.CoreCompileInputs.cache
+D:\on tap\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.exe
+D:\on tap\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.pdb
+D:\on tap\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.exe.config
+D:\on tap\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.ManChoi.resources
+D:\CardFlippingGame\CardFlippingGame\bin\Debug\CardFlippingGame.exe.config
+D:\CardFlippingGame\CardFlippingGame\bin\Debug\CardFlippingGame.exe
+D:\CardFlippingGame\CardFlippingGame\bin\Debug\CardFlippingGame.pdb
+D:\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.csproj.AssemblyReference.cache
+D:\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.exe.config
+D:\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.ManChoi.resources
+D:\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.Properties.Resources.resources
+D:\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.csproj.GenerateResource.cache
+D:\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.csproj.CoreCompileInputs.cache
+D:\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.exe
+D:\CardFlippingGame\CardFlippingGame\obj\Debug\CardFlippingGame.pdb
