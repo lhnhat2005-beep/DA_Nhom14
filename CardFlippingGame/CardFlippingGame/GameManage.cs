@@ -23,7 +23,7 @@ namespace CardFlippingGame
         public List<string> DoKho = new List<string>() {
             @"De.png",
             @"TrungBinh.png",
-            @"Kho.png"
+            @"Kho.png",
         };//list chứa ảnh của các nút độ khó
         public List<string> Theme = new List<string>
         {
@@ -180,4 +180,5 @@ namespace CardFlippingGame
         } 
     }
 }
+
 
