@@ -24,7 +24,7 @@ namespace CardFlippingGame
             this.f = f;
             this.ui = UI;
             int cardheight = f.ClientRectangle.Height / 5;
-            int cardwidth = f.ClientRectangle.Height / 5;
+            int cardwidth = f.ClientRectangle.Width / 8;
             int Khoangcach = 10;
             int sodong = ui.SoDongBang;
             int socot = ui.SoCotBang;
@@ -190,3 +190,4 @@ namespace CardFlippingGame
         }
     }
 }
+
