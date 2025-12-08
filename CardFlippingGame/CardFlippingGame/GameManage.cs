@@ -12,7 +12,6 @@ using System.Windows.Forms;
 
 namespace CardFlippingGame
 {
-    [Serializable]
     internal class GameManage
     {
         private GameUI UI;
@@ -181,3 +180,4 @@ namespace CardFlippingGame
         } 
     }
 }
+
