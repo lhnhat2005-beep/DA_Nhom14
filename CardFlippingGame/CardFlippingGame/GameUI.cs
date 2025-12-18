@@ -273,7 +273,7 @@ namespace CardFlippingGame
                 }
                 else
                 {
-                    f.BackgroundImage = Image.FromFile(gameManage.BackGround[0]);
+                    BackGroundImage(f,"default");
                     ThemeSelectionButton(f);
                     Back.Visible = false;
                     Start.Visible = false;
@@ -806,4 +806,5 @@ namespace CardFlippingGame
         } 
 
     }
+
 }
