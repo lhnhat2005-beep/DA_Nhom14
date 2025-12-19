@@ -9,7 +9,7 @@ namespace CardFlippingGame
     {
         GameUI ui;
         Form f;
-        public List<PictureBox> CardList = new List<PictureBox>(); //list chứa các picturebox thẻ để sử dụng cho hàm f_resize
+        public List<PictureBox> CardList = new List<PictureBox>();
         private Card FistCard = null;
         private Card SecondCard = null;
         private PictureBox pb1 = null;
@@ -213,3 +213,4 @@ namespace CardFlippingGame
         }
     }
 }
+
